@@ -30,16 +30,24 @@ page 50100 Marca
     {
         area(Processing)
         {
-            action(ActionName)
+            //action(ActionName)
+            action(Test)
             {
+
                 ApplicationArea = All;
+                Caption = 'Saludo';
 
                 trigger OnAction()
                 begin
-
+                    codeunitPrueba.MyProcedureGlobal();
                 end;
             }
+
         }
+
+
     }
+    var
+        codeunitPrueba: Codeunit TestCodeunit;
 
 }
