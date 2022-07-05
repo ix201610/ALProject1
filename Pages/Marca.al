@@ -35,7 +35,8 @@ page 50100 Marca
             {
 
                 ApplicationArea = All;
-                Caption = 'Saludo';
+                //Caption = 'Saludo';
+                Caption = 'Test';
 
                 trigger OnAction()
                 begin
