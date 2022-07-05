@@ -14,11 +14,13 @@ page 50100 Marca
             {
                 field(Codigo; Rec.Codigo)
                 {
-                    caption = 'Código';
+                    ApplicationArea = All;
+                    //caption = 'Código';
                 }
                 field(Descripcion; Rec.Descripcion)
                 {
-                    caption = 'Desccripción';
+                    ApplicationArea = All;
+                    //caption = 'Desccripción';
                 }
             }
         }
