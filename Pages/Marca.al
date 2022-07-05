@@ -1,25 +1,24 @@
 page 50100 Marca
 {
-    PageType = Card;
+    PageType = List;
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = Marca;
+
 
     layout
     {
         area(Content)
         {
-            group(GroupName)
+            repeater(GroupName)
             {
                 field(Codigo; Rec.Codigo)
                 {
-                    /*ApplicationArea = All;*/
-
+                    caption = 'Código';
                 }
                 field(Descripcion; Rec.Descripcion)
                 {
-                    /*ApplicationArea = All;*/
-
+                    caption = 'Desccripción';
                 }
             }
         }
