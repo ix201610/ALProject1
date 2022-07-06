@@ -8,6 +8,7 @@ report 50101 Vehiculos
 
     dataset
     {
+
         dataitem(Vehiculo; Vehiculo)
         {
             column(codigo; Codigo)
