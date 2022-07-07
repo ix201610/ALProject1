@@ -28,12 +28,17 @@ table 50101 Vehiculo
             Caption = 'Tipo';
             OptionMembers = ,Auto,Moto;
             trigger OnValidate()
+
             begin
-                if tipo = tipo::Auto then
-                    cantidadDeRuedas := 4
-                else
-                    if tipo = tipo::Moto then
-                        cantidadDeRuedas := 2;
+                /*
+                 if tipo = tipo::Auto then
+                     cantidadDeRuedas := 4
+                 else
+                     if tipo = tipo::Moto then
+                         cantidadDeRuedas := 2;
+                 */
+                cantidadDeRuedas := codeunitReglas.CantidadDeRuedas(Format(tipo::Auto));
+
             end;
         }
         field(4; cantidadDeRuedas; Integer)
@@ -53,23 +58,33 @@ table 50101 Vehiculo
 
     trigger OnInsert()
     begin
-        Message('Nuevo Vehiculo Creado');
+
+        //Message('Nuevo Vehiculo Creado');
+        Message(codeunitMensajes.Mensajes('OnInsert', ''));
     end;
 
     trigger OnModify()
     begin
-        Message('El vehiculo fue modificado');
+        //Message('El vehiculo fue modificado');
+        Message(codeunitMensajes.Mensajes('OnModify', ''));
     end;
 
     trigger OnDelete()
     begin
+        /*
         if (tipo = tipo::Auto) or (tipo = tipo::Moto) then
             error('No se puede eliminar estre registro, tipo debe ser vacio');
+            */
+        Message(codeunitMensajes.Mensajes('OnDelete', Format(tipo)));
     end;
 
     trigger OnRename()
     begin
 
     end;
+
+    var
+        codeunitReglas: Codeunit Reglas;
+        codeunitMensajes: Codeunit Mensajes;
 
 }

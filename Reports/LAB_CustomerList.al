@@ -6,7 +6,7 @@ report 50110 LAB_CustomerList
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = All;
     //DefaultLayout = Word ó RDLC;
-
+    DefaultLayout = Word;
     PreviewMode = Normal;
     WordMergeDataItem = Customer;
 
